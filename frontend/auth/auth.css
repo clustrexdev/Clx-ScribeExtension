@@ -1,0 +1,17 @@
+#login{
+    background-color: rgb(42, 185, 241);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 8px;
+    display: block;
+    margin-inline: auto;
+    margin-top: 50%;
+}
+
+#login:hover{
+    background-color: rgb(5, 173, 240);
+}

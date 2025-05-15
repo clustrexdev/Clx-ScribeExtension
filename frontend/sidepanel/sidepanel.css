@@ -1,0 +1,175 @@
+
+#inputFields{
+    padding: 5px;
+}
+
+#audioplayer{
+    display: block; 
+    margin-inline: auto;
+}
+
+#audioRecorderDiv{
+    padding: 5px;
+}
+
+#audioRecorderDiv > * {
+    padding: 5px;
+}
+
+#audio-control-button-div{
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+#timer{
+    font-size: 30px;
+    margin-bottom: 0px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f4f4f4;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.email-container {
+    flex: 1;
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+}
+
+.logout-button-div {
+    flex-basis: 10%;
+    text-align: right;
+}
+
+#logout {
+    padding: 8px 16px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#logout:hover {
+    background-color: #e60000;
+}
+
+.hide{
+    display: none;
+}
+
+.flex{
+    display: flex;
+}
+
+.flex-direction-column {
+    flex-direction: column;
+}
+
+.flex-direction-row {
+    flex-direction: row;
+}
+
+.flex-row{
+    padding: 10px;
+}
+
+.flex-row div{
+    width: 50%;
+}
+
+.center-div{
+    display: block; 
+    margin-inline: auto;
+}
+
+.align-items-center{
+    align-items: center;
+}
+
+.text-align-center{
+    text-align: center;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5; /* To make it look like disabled */
+}
+
+.qna-item{
+    margin: 10px;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+
+
+
+@keyframes audio-wave {
+    0% {
+        height: 6px;
+        transform: translateY(0px);
+        /* background: #ff8e3a; */
+        background: rgb(236, 24, 24);
+    }
+
+    25% {
+        height: 20px;
+        transform: translateY(-5px) scaleY(1.7);
+        /* background: #ed509e; */
+        background: rgb(240, 74, 74);
+    }
+
+    50% {
+        height: 6px;
+        transform: translateY(0px);
+        /* background: #9c73f8; */
+        background: rgb(240, 74, 74);
+    }
+
+    100% {
+        height: 6px;
+        transform: translateY(0px);
+        /* background: #0fccce; */
+        background: rgb(236, 24, 24);
+    }
+}
+
+
+.sound-wave {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    gap: 0.5rem;
+    height: 2rem;
+}
+
+.sound-wave div {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgb(250, 65, 65);
+}
+
+.sound-wave.recording div {
+    width: 8px;
+    height: 6px;
+    border-radius: 4px;
+    animation: audio-wave 2s infinite ease-in-out;
+}
+
+.sound-wave.recording div:nth-child(2) { animation-delay: 0.2s; }
+.sound-wave.recording div:nth-child(3) { animation-delay: 0.4s; }
+.sound-wave.recording div:nth-child(4) { animation-delay: 0.6s; }
+.sound-wave.recording div:nth-child(5) { animation-delay: 0.8s; }
+

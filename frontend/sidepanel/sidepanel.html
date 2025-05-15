@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="sidepanel.css">
+        <script src="../shared/opentok.min.js"></script>
+    </head>
+
+    <body>
+        <div class="header">
+            <div id="email" class="email-container">email</div>
+            <div class="logout-button-div">
+                <button id="logout">Logout</button>
+            </div>
+        </div>
+        <div id="container">
+
+            <div id="inputFields" class="flex flex-direction-column">
+                <div class="flex flex-row">
+                    <div><label>Patient ID : </label><span id="patientId">-</span></div>
+                    <div><label>Patient DOB : </label><span id="dob">-</span></div>
+                </div>
+                <div class="flex flex-row">
+                    <div><label>Patient Name : </label><span id="patientName">-</span></div>
+                    <div><label>Patient Phone : </label><span id="patientPhone">-</span></div>
+                </div>
+                <div id="NoPatientDetails" class="flex flex-row hide">Please open the patient chart and then click the below button</div>
+                <div class="flex flex-row">
+                    <button id="recordPatientDataButton" class="hide">Fetch Patient</button>
+                </div>
+            </div>
+
+            
+            <div id="audioRecorderDiv">
+                <div>
+                    <p id="timer" class="text-align-center">00:00</p>
+                </div>
+                <div id="audio-control-button-div" class="flex flex-direction-row">
+                    <div id="startRecordButton">
+                        <svg id="start" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+                            <title>Record</title>
+                            <circle cx="12" cy="12" r="12" fill="red"/>
+                            <g transform="scale(0.8) translate(3, 3)">
+                              <path fill="white" d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"/>
+                            </g>
+                        </svg>
+                        <svg id="pause" class="hide" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+                            <title>Pause</title>
+                            <circle cx="12" cy="12" r="12" fill="red"/>
+                            <rect x="8" y="7" width="2" height="10" fill="white"/>
+                            <rect x="14" y="7" width="2" height="10" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="sound-wave">
+                        <div></div><div></div><div></div><div></div><div></div>
+                    </div>
+                    <div id="stopRecordBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+                            <title>Stop</title>
+                            <circle cx="12" cy="12" r="12" fill="red"/>
+                            <rect x="7" y="7" width="10" height="10" fill="white"/>
+                        </svg> 
+                    </div>
+                </div>
+                <audio id="audioplayer" controls></audio>
+                <p id="status" class="text-align-center">Press the icon to start and stop recording</p>
+                <p id="result" class="text-align-center">...</p>
+            </div>
+
+            <div id="llmoutput">
+                <div class="bold">LLM Output:</div>
+                <div id="llmResponse">...</div>
+            </div>
+            
+        </div>
+
+        <script type="module" src="sidepanel.js"></script>
+    </body>
+</html>
