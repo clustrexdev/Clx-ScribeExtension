@@ -1,0 +1,6 @@
+flask
+flask-cors
+boto3
+serverless_wsgi
+openai==0.28
+dotenv
