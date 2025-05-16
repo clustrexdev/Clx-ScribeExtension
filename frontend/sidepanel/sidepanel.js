@@ -96,6 +96,7 @@ const resultBox = document.getElementById("result");
 const soundWave = document.querySelector('.sound-wave');
 const timerElement = document.getElementById("timer");
 const container = document.getElementById('llmResponse');
+const audioElement = document.getElementById("audioplayer");
 
 document.getElementById("startRecordButton").classList.add("disabled");
 document.getElementById("stopRecordBtn").classList.add("disabled");
@@ -119,6 +120,12 @@ function startRecordingUI(){
     document.getElementById("pause").style.display = "block";
     document.getElementById("start").style.display = "none";
     soundWave.classList.add('recording');
+    if (audioElement.src) {
+        audioElement.pause(); // Stop if playing
+        URL.revokeObjectURL(audioElement.src); // Free memory
+        audioElement.removeAttribute("src"); // Unset source
+        audioElement.load(); // Reset player
+    }
     interval = setInterval(() => {
         seconds++;
         updateTimer();
@@ -183,7 +190,6 @@ stopRecordBtn.onclick = async () => {
         const blob = new Blob(audioChunks, { type: "audio/mp3" });
         const audioUrl = URL.createObjectURL(blob);
 
-        const audioElement = document.getElementById("audioplayer");
         audioElement.src = audioUrl;
         audioElement.load(); // Refresh the source
         
